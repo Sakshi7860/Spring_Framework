@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    <bean name="address1" class="com.project.spring.springcoreadvanced.autowiringbyConstructor.Address" p:city="bangalore" p:hno="131" p:pincode="143902"/>
+    <bean name="address" class="com.project.spring.springcoreadvanced.autowiringbyConstructor.Address" p:city= "pune" p:hno="1273" p:pincode="562920"/>
+     <!-- by Constructor will check first type and if type same then look for by name anf then inject that dependency -->
+  	<bean name="emp" class="com.project.spring.springcoreadvanced.autowiringbyConstructor.Employee" autowire="constructor">
+    <constructor-arg name="empno" value="35652"></constructor-arg>
+    <constructor-arg name="ename" value="Raman"></constructor-arg>
+    </bean>
+ </beans>

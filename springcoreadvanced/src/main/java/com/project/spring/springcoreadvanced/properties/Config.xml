@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    
+    <!-- this annotation is required to loacte the property file to refer to use -->
+    <context:property-placeholder location="com/project/spring/springcoreadvanced/properties/database.properties"/> 
+    
+   
+    <bean name="web" class="com.project.spring.springcoreadvanced.properties.WebApplication">
+     
+  <!-- <property name="dbServer" value="${dbport}">   Exception for invalid bean Definition come becoz properties are defined in camelcasing and tryin gto fetch with dbport not dbPort-->
+   <!--  <value>${dbServer}</value> -->
+   <property name="dbServer" value="${dbPort}">
+    </property>
+ 	</bean>
+ </beans>

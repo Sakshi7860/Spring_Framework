@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    <bean name="address1" class="com.project.spring.springcoreadvanced.autowiringbyname.Address" p:city="bangalore" p:hno="131" p:pincode="143902"/>
+     <bean name="address2" class="com.project.spring.springcoreadvanced.autowiringbyname.Address" p:city= "pune" p:hno="1273" p:pincode="562920"/>
+     
+    <!-- By default, it matches name of the address in employee class with the bean definition in xml.
+    if you give the same bean name for two beans thn it will give the error of saying "Bean name 'address' is already used in this <beans>" element -->
+  	<bean name="emp" class="com.project.spring.springcoreadvanced.autowiringbyname.Employee" p:empno="2671" p:ename="dhvani" autowire="byName">
+   
+    </bean>
+ </beans>

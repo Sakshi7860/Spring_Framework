@@ -1,0 +1,41 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <session-factory>
+
+        <!-- JDBC Database connection settings -->
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/testBeta</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">rootroot</property>
+
+        <!-- JDBC connection pool settings ... using built-in test pool -->
+        <!-- <property name="connection.pool_size">1</property> -->
+
+        <!-- Select our SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+
+        <!-- Echo the SQL to stdout -->
+        <property name="show_sql">true</property>
+
+		<!-- Set the current session context -->
+		<property name="current_session_context_class">thread</property>
+		<!-- hbm2ddl.auto:create/update/create-drop/validate 
+			create: 1. drop the table if exists
+					2. create new table
+					3. insert the data into table
+			upadte: 1. update the existing table
+			create-drop: 1. drop the table if exists
+						 2. create new table
+						 3. insert the data into table
+						 4. drop the table if you close sesionfactory() explicity or application get closed.
+			validate: 1. It validate the database schema and insert the values into it. 
+					  2. If tables doesnt exists, then will give exception for that-->
+		<property name="q">create</property>
+
+    </session-factory>
+
+</hibernate-configuration>

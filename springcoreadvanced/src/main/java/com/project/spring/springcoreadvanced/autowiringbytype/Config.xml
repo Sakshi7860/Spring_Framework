@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    <bean name="address" class="com.project.spring.springcoreadvanced.autowiringbytype.Address" p:city="bangalore" p:hno="131" p:pincode="143902"/>
+    <bean name="address1" class="com.project.spring.springcoreadvanced.autowiringbytype.Address" p:city="bangalore" p:hno="131" p:pincode="143902"/> 
+   <!-- if you declare 2 beans with same type then it will give runtime exception of found two beans address, address1 of same type  -->
+  	<bean name="emp" class="com.project.spring.springcoreadvanced.autowiringbytype.Employee" p:empno="420" p:ename="Shalini" autowire="byType">
+   
+    </bean>
+ </beans>
