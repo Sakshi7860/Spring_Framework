@@ -11,7 +11,7 @@ public class Test {
 		ProductDao dao=(ProductDao) context.getBean("productDaoImp");
 		Product product=(Product) context.getBean("product");
 		System.out.println(dao.create(product));
-		dao.update(product);
+	
 		
 	}
 	

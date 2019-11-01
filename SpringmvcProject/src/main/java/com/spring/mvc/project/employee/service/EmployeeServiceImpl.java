@@ -33,5 +33,12 @@ public class EmployeeServiceImpl implements EmployeeService {
 		// TODO Auto-generated method stub
 		return employeeDao.getdetail(id);
 	}
+	
+	@Transactional
+	@Override
+	public void update(Employee emp) {
+		 employeeDao.update(emp);
+		
+	}
 
 }

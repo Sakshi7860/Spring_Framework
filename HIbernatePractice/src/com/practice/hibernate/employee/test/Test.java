@@ -9,10 +9,11 @@ public class Test {
 	public static void main(String[] args) {
 		EmployeeDao dao=new EmployeeDaoImpl();
 	Employee emp=new Employee();
-		emp.setEid(108);
-		emp.setEname("Minku");
+		emp.setEid(104);
+		emp.setEname("sakshi");
     	emp.setEcourse("BCA");
-    	System.out.println(dao.insert(emp));
+    	//System.out.println(dao.insert(emp));
+    	System.out.println(dao.getDetail(102));
 //    	System.out.println(dao.getDetails());
     	//dao.delete(emp.getEid());
     	//dao.update(emp.getEid());

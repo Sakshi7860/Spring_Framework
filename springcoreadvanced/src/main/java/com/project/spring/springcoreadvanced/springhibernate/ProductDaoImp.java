@@ -42,6 +42,7 @@ public class ProductDaoImp implements ProductDao {
 	@Override
 	public void update(Product product) {
 		hibernateTemplate.update(product);
+		//(Product)hibernateTemplate.merge(product)   //return the object of product
 	}
 
 	

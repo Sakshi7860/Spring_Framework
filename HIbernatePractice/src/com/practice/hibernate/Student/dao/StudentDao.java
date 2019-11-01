@@ -6,7 +6,7 @@ import com.practice.hibernate.Student.Student;
 public interface StudentDao {
 	
 	int insert(Student student);
-	int insert(Laptop laptop);
+	//int insert(Laptop laptop);
 	Student get(int id);
 
 }

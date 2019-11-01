@@ -7,7 +7,7 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
     <bean name="address1" class="com.project.spring.springcoreadvanced.autowiringbyname.Address" p:city="bangalore" p:hno="131" p:pincode="143902"/>
-     <bean name="address2" class="com.project.spring.springcoreadvanced.autowiringbyname.Address" p:city= "pune" p:hno="1273" p:pincode="562920"/>
+     <bean name="address" class="com.project.spring.springcoreadvanced.autowiringbyname.Address" p:city= "pune" p:hno="1273" p:pincode="562920"/>
      
     <!-- By default, it matches name of the address in employee class with the bean definition in xml.
     if you give the same bean name for two beans thn it will give the error of saying "Bean name 'address' is already used in this <beans>" element -->

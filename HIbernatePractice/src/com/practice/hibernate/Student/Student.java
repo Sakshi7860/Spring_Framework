@@ -12,8 +12,7 @@ import javax.persistence.Table;
 
 import com.practice.hibernate.Laptop.Laptop;
 
-@Table(name="Student_1")
-@Entity(name="student")
+@Entity
 public class Student {
 	@Id
 	int sid;
@@ -21,8 +20,8 @@ public class Student {
 //	@OneToOne
 //	Laptop laptop;
 	//@OneToMany  //will create 3 tables, One for Student, second for laptop, third for Student_laptop mapping.
-	@ManyToMany(mappedBy="student")
-	List<Laptop> laptop =new ArrayList<>();
+//	@ManyToMany(mappedBy="student")
+//	List<Laptop> laptop =new ArrayList<>();
 	public int getSid() {
 		return sid;
 	}
@@ -36,27 +35,27 @@ public class Student {
 		this.sname = sname;
 	}
 	
-public List<Laptop> getLaptop() {
-		return laptop;
-	}
-	public void setLaptop(List<Laptop> laptop) {
-		this.laptop = laptop;
-	}
+//public List<Laptop> getLaptop() {
+//		return laptop;
+//	}
+//	public void setLaptop(List<Laptop> laptop) {
+//		this.laptop = laptop;
+//	}
 	//	public Laptop getLaptop() {
 //		return laptop;
 //	}
 //	public void setLaptop(Laptop laptop) {
 //		this.laptop = laptop;
 //	}
-//	@Override
-//	public String toString() {
-//		return "Student [sid=" + sid + ", sname=" + sname + "]";
-//	}
 	@Override
 	public String toString() {
-		return "Student [sid=" + sid + ", sname=" + sname + ", laptop=" + laptop + "]";
+		return "Student [sid=" + sid + ", sname=" + sname + "]";
 	}
-	
+//	@Override
+//	public String toString() {
+//		return "Student [sid=" + sid + ", sname=" + sname + ", laptop=" + laptop + "]";
+//	}
+//	
 	
 	
 }

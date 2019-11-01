@@ -29,4 +29,11 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		return hibernateTemplate.get(Employee.class, id);
 	}
 
+	@Override
+	public void update(Employee emp) {
+		hibernateTemplate.update(emp);
+		
+	}
+
+	
 }

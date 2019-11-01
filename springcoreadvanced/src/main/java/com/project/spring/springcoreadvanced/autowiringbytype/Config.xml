@@ -6,8 +6,8 @@
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
-    <bean name="address" class="com.project.spring.springcoreadvanced.autowiringbytype.Address" p:city="bangalore" p:hno="131" p:pincode="143902"/>
-    <bean name="address1" class="com.project.spring.springcoreadvanced.autowiringbytype.Address" p:city="bangalore" p:hno="131" p:pincode="143902"/> 
+    <bean name="address2" class="com.project.spring.springcoreadvanced.autowiringbytype.Address" p:city="bangalore" p:hno="131" p:pincode="143902"/>
+    <bean name="address" class="com.project.spring.springcoreadvanced.autowiringbytype.Address" p:city="bangalore" p:hno="131" p:pincode="143902"/> 
    <!-- if you declare 2 beans with same type then it will give runtime exception of found two beans address, address1 of same type  -->
   	<bean name="emp" class="com.project.spring.springcoreadvanced.autowiringbytype.Employee" p:empno="420" p:ename="Shalini" autowire="byType">
    

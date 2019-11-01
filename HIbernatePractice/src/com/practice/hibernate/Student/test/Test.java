@@ -17,13 +17,13 @@ public class Test {
 		
 		Student student=new Student();
 		student.setSid(101);
-		student.setSname("Mehak");
-		student.getLaptop().add(laptop);
-		laptop.getStudent().add(student);
+		student.setSname("Sarb");
+//		student.getLaptop().add(laptop);
+//		laptop.getStudent().add(student);
 		//dao.insert(student);
 		//System.out.println(dao.insert(student));
 		//System.out.println(dao.insert(laptop));
-		System.out.println(dao.get(101));
+		System.out.println(dao.insert(student));
 		
 		
 	}

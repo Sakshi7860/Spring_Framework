@@ -8,6 +8,7 @@ import javax.transaction.Transactional;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
 
@@ -21,8 +22,18 @@ public class EmployeeDaoImpl implements EmployeeDao {
 	public Employee getDetail(int eid) {
 		Session session=sessionFactory.getCurrentSession();
 		session.beginTransaction();
-		//Employee emp=session.get(Employee.class, eid);
-		Employee emp=session.get(Employee.class, eid);
+	   Employee emp=session.get(Employee.class, eid);
+	   	Employee emp1=session.get(Employee.class, eid);
+		try {
+			Thread.sleep(10000);
+		} catch (InterruptedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}	
+		Employee e=session.load(Employee.class, eid);
+//		Employee e1=session.load(Employee.class, eid);session.load(Employee.class, eid);session.load(Employee.class, eid);session.load(Employee.class, eid);
+		System.out.println(e);
+//		System.out.println(e1);
 		session.getTransaction().commit();
 		return emp;
 		
@@ -31,21 +42,20 @@ public class EmployeeDaoImpl implements EmployeeDao {
 	@Override	
 	public int insert(Employee emp) {
 		int res=0;
-		try {
-//		Employee emp2=new Employee();
-//		emp2.setEid(102);
-//		emp2.setEname("Seema");
-//		emp2.setEcourse("MCA");
 		Session session= sessionFactory.getCurrentSession();
 		org.hibernate.Transaction tx=session.beginTransaction();
 		res=(int) session.save(emp);
-		session.save(emp);
+		
+		
+		Employee emp1=session.get(Employee.class, emp.getEid());
+		System.out.println(emp1.getEid());
+		//session.detach(emp);
+		emp1.setEcourse("fkfn");
+//		emp.setEid(303);
+		//session.save(emp);
 		session.getTransaction().commit();
-		}
-		catch(Exception e)
-		{
-			System.out.println(e.getMessage());
-		}
+		
+		//session.save(emp);
 		sessionFactory.close();
 		return res;
 	}
@@ -140,7 +150,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		try {
 		Session session=sessionFactory.getCurrentSession();
 		Transaction tx=(Transaction) session.beginTransaction();
-		list=session.createQuery("from Employee").getResultList();
+		list=session.createQuery("from Employee").list();
 		tx.commit();
 		//session.getTransaction().commit();   -->commit is required if you make any updation and deletion operation. To get details, It can be skipped.
 		//System.out.println(list);

@@ -12,11 +12,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class Product {
 	@Id
-	@Value("202")
+	@Value("100")
 	private int pid;
 	@Value("Belt")
 	private String pname;
-	@Value("200")
+	@Value("1000")
 	private int price;
 
 	@Override
